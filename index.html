@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Prototipo de asistente financiero con datos simulados." />
+    <title>Nu | Finanzas simuladas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#inicio" aria-label="Nu, ir al inicio">Nu</a>
+        <nav aria-label="Navegación principal">
+          <a class="active" href="#inicio">Inicio</a>
+          <a href="#movimientos">Movimientos</a>
+          <a href="#metas">Metas</a>
+          <a href="#ayuda">Ayuda</a>
+        </nav>
+        <button class="profile" aria-label="Abrir perfil">SA</button>
+      </header>
+
+      <main id="inicio">
+        <section class="welcome-row">
+          <div>
+            <p class="eyebrow">Martes, 22 de septiembre</p>
+            <h1>Hola, Salo <span aria-hidden="true">✦</span></h1>
+            <p class="subhead">Así se ven tus finanzas hoy.</p>
+          </div>
+          <button class="quiet-button" id="hideBalance" aria-pressed="false"><span class="eye">◉</span> Ocultar saldo</button>
+        </section>
+
+        <section class="balance-card card" aria-label="Saldo disponible simulado">
+          <div class="balance-top"><p>Saldo disponible</p><span class="simulated">Datos simulados</span></div>
+          <strong class="balance-value" data-money="1850000">$1.850.000</strong><span class="currency">COP</span>
+          <p class="account-name">Cuenta principal <span>•</span> Terminada en 0421</p>
+          <div class="balance-actions">
+            <button class="round-action" data-toast="Este es un prototipo: no hay transferencias reales."><span>↑</span>Enviar</button>
+            <button class="round-action" data-toast="Este es un prototipo: no hay dinero real para recibir."><span>↓</span>Recibir</button>
+            <button class="round-action" data-toast="Tus datos ficticios están al día."><span>⌁</span>Ver detalles</button>
+          </div>
+        </section>
+
+        <section class="overview" aria-label="Resumen del mes">
+          <article class="mini-card card"><div class="mini-icon income">↗</div><p>Ingresos este mes</p><strong>+$2.400.000</strong><span class="positive">+12% vs. agosto</span></article>
+          <article class="mini-card card"><div class="mini-icon expense">↘</div><p>Gastos este mes</p><strong>-$550.000</strong><span class="muted">23% de tus ingresos</span></article>
+          <article class="goal-card card" id="metas"><div><p>Meta de ahorro</p><strong>$800.000 <small>de $1.500.000</small></strong></div><div class="goal-ring" aria-label="53 por ciento de avance"><span>53%</span></div><div class="progress"><span></span></div><button class="text-button" data-toast="¡Vas muy bien! Te faltan $700.000 para tu meta.">Ver meta <b>→</b></button></article>
+        </section>
+
+        <section class="assistant-promo" id="ayuda">
+          <div class="assistant-orb" aria-hidden="true"><div class="spark s1">✦</div><div class="spark s2">✦</div><div class="bot-face"><i></i><i></i><em>⌣</em></div></div>
+          <div class="assistant-copy"><p class="eyebrow">ASISTENTE FINANCIERO</p><h2>Tu dinero tiene un<br />nuevo aliado.</h2><p>No tienes que hacer cuentas sola. Pregúntame sobre tus gastos, presupuesto o metas.</p><div class="quick-prompts"><button data-prompt="¿Cuánto puedo gastar esta semana?">¿Cuánto puedo gastar?</button><button data-prompt="¿En qué estoy gastando más?">¿En qué gasto más?</button><button data-prompt="¿Puedo ahorrar más?">¿Puedo ahorrar más?</button></div><button class="primary-button open-chat">Hablar con mi asistente <span>→</span></button></div>
+          <div class="assistant-note"><span>✦</span><p>Una mirada más clara<br />a tus finanzas.</p></div>
+        </section>
+
+        <section class="lower-grid" id="movimientos">
+          <article class="movements card"><div class="section-heading"><div><h2>Movimientos recientes</h2><p>Tu actividad de los últimos días</p></div><button class="text-button" data-toast="Mostrando todos los movimientos simulados.">Ver todos <b>→</b></button></div>
+            <ul>
+              <li><div class="movement-icon food">⌁</div><div><strong>Rappi</strong><p>Hoy · Alimentación</p></div><span>-$32.000</span></li>
+              <li><div class="movement-icon music">♪</div><div><strong>Spotify</strong><p>Ayer · Entretenimiento</p></div><span>-$16.900</span></li>
+              <li><div class="movement-icon transfer">↓</div><div><strong>Transferencia recibida</strong><p>18 sep · Ingreso</p></div><span class="received">+$500.000</span></li>
+              <li><div class="movement-icon market">▦</div><div><strong>Mercado local</strong><p>17 sep · Mercado</p></div><span>-$87.450</span></li>
+            </ul>
+          </article>
+          <article class="spending card"><div class="section-heading"><div><h2>Tu resumen</h2><p>Así distribuiste tus gastos</p></div><button class="dots" aria-label="Más opciones">•••</button></div><div class="chart-area"><div class="donut"><span>$550<span>mil</span></span></div><div class="legend"><p><i class="dot d1"></i>Alimentación <b>32%</b></p><p><i class="dot d2"></i>Transporte <b>21%</b></p><p><i class="dot d3"></i>Entretenimiento <b>18%</b></p><p><i class="dot d4"></i>Otros <b>29%</b></p></div></div><button class="outline-button" data-prompt="Dame un resumen de mis gastos">Ver análisis de gastos <span>→</span></button></article>
+        </section>
+      </main>
+      <footer>Prototipo educativo · Todos los datos son ficticios</footer>
+    </div>
+
+    <div class="toast" role="status" aria-live="polite"></div>
+    <section class="chat-panel" id="chatPanel" aria-label="Asistente financiero" aria-hidden="true">
+      <div class="chat-header"><div class="chat-avatar">✦</div><div><h2>Asistente financiero</h2><p><i></i> Tu cuenta · Datos simulados</p></div><button class="close-chat" aria-label="Cerrar asistente">×</button></div>
+      <div class="chat-messages" id="chatMessages"><div class="message assistant">¡Hola, Salo! ✦<br /><br />Estoy aquí para ayudarte a entender tu dinero. Puedo revisar tus gastos, pensar contigo una compra o ayudarte a llegar a tu meta.</div><div class="suggestions"><button data-prompt="¿Cuánto puedo gastar esta semana?">¿Cuánto puedo gastar?</button><button data-prompt="¿En qué estoy gastando más?">¿En qué gasto más?</button></div></div>
+      <form class="chat-input" id="chatForm"><input id="messageInput" autocomplete="off" placeholder="Pregúntame lo que quieras..." aria-label="Escribe tu mensaje" /><button aria-label="Enviar mensaje" type="submit">↑</button></form>
+    </section>
+    <div class="chat-backdrop"></div>
+    <button class="floating-chat open-chat" aria-label="Abrir asistente financiero">✦</button>
+    <script src="script.js"></script>
+  </body>
+</html>
