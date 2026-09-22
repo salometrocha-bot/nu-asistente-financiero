@@ -300,7 +300,7 @@ if (!answer) {
     );
   }
 
-}).listen(port, () => {
+}).listen(port, "0.0.0.0", () => {
   console.log(
     `Nu demo: http://localhost:${port}`
   );
